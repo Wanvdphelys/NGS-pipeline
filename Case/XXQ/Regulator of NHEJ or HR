@@ -1,4 +1,5 @@
-...#data without non-tagetgene 
+```R
+#data without non-tagetgene 
 #read data
 gene_summary_1 <- read.table('C:\\Users\\gw-pc\\Desktop\\Human_GeCKOv2_Library_A_3_mageck.csv\\count\\XXQ1\\beta_XXQ1.gene_NON_summary.txt',header = T, stringsAsFactors = F)
 gene_summary_2 <- read.table('C:\\Users\\gw-pc\\Desktop\\Human_GeCKOv2_Library_A_3_mageck.csv\\count\\XXQ2\\beta_XXQ2.gene_NON_summary.txt',header = T, stringsAsFactors = F)
@@ -115,4 +116,5 @@ gene_summary_1$rank <- row.names(gene_summary_1)
 p<- ggplot(data = gene_summary_1,aes(x = gene_summary_1$rank,y = gene_summary_1$NHEJ.beta))
 p+geom_point()
 plot(gene_summary_1$rank,gene_summary_1$NHEJ.beta)
-detach(gene_summary_1)...
+detach(gene_summary_1)
+```
