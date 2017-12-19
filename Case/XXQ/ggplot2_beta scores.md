@@ -1,3 +1,0 @@
-...library(ggplot2)
-p<-ggplot(beta_XXQ1.gene_summary,aes(beta_XXQ1.gene_summary$Gene,beta_XXQ1.gene_summary$NHEJ.beta))
-p+geom_point()...
