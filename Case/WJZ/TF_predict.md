@@ -9,6 +9,10 @@ Maximum matrix dissimilarity rate: 0 </br>
 **results:**
 TFIID, GR, YY1, C/EBPbeta, GR-alpha, GR-beta, IRF-2, GCF, AP-2alphaA, FOXP3, GATA-1, Pax-5, p53, ER-alpha, c-Myb, PR B, PR A, NF-1, RXR-alpha, XBP-1, TCF-4E, HOXD9, HOXD10, C/EBPalpha, TFII-I
 ### 3 corelation analysis in TCGA and GEO datasets
+**data source:** 
+- TCGA-LAML_FPKM_UQ_Transcriptome_Profiling_Gene_Expression_Quantification_hg38
+- GSE37642 984 AML patients  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE37642
+- GSE14468 526 AML patients  https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE14468
 ```R
 
 ```
