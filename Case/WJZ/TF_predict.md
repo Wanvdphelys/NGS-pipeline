@@ -69,6 +69,6 @@ GSE37642_9697_eset_corr <- GSE37642_9697_eset_corr[!duplicated(row.names(GSE3764
 corr_GSE37642_9697 <- cor(t(GSE37642_9697_eset_corr))
 # calculate multi-test p value
 res_GSE37642_9697_eset <- cor.mtest(GSE37642_9697_eset_corr, conf.level = .95)
-# plot correlation
+# plot correlation matrix
 corrplot(corr_GSE37642_9697, p.mat = res_GSE37642_9697_eset$p, method = "ellipse", cl.lim = c(-100, 100))
 ```
