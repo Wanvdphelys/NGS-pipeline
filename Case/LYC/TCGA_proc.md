@@ -4,16 +4,19 @@ Process and annotate TCGA RNA-seq data
 ```R
 library(SummarizedExperiment)
 library(TCGAbiolinks)
+library(EnsDb.Hsapiens.v86)
 
 # loading data from downloaded data
+hnsc_fpkm_uq <- read.csv('C:\\Users\\wanvdphelys\\Documents\\TCGAbiolinksGUI\\Result-HNSC\\hnsc_fpkm_uq.csv',
+                         row.names = 1)
 # extract assays
-hnsc_fpkm_uq <- assay(data)
+# hnsc_fpkm_uq <- assay(data)
 
 # annotate with ENSDB
 # extract transcripts annotations
 ensdb.hs <- EnsDb.Hsapiens.v86
-tx.hs <- transcripts(ensdb.hs,return.type = "DataFrame")
-tx.hs <- tx.hs[,c("tx_id", "gene_id")]
+keytypes(ensdb.hs)
+tf_ens <- select(ensdb.hs, keys=TF, keytype="GENENAME", columns=c("GENEID", "GENENAME"))
 
 # extract genes annotations
 gene.hs <- genes(ensdb.hs, return.type = 'DataFrame')
