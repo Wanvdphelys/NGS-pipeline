@@ -102,6 +102,8 @@ head(txi.kallisto.tsv$counts)
 ```
 scaled counts are suitable for gene expression related plots, such as heatmap or expression bar plot
 
+:exclamation::exclamation: __After tximport, there will be an extra row at the top of the raw counts. This is due to different versions of gene and transcripts ID. In which case, multiple transcripts might be collapsed to an empty gene name.__ The original explanation can be found here: https://support.bioconductor.org/p/102220/
+
 sampleTable file format:
 --------------------------
 SampleTable data.frame is used in kallisto, sleuth and tximport.
