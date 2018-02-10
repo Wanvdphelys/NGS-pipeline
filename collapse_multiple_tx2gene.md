@@ -9,5 +9,6 @@ collapseRows(datET, # gene expression matrix
              methodFunction=NULL, connectivityPower=1,
              selectFewestMissing=TRUE, thresholdCombine=NA)
              
-             
+
  ```
+ https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-322
