@@ -15,7 +15,7 @@ collapseRows(datET, # gene expression matrix
  ***Strategies for aggregating gene expression data: The collapseRows R function***
  https://bmcbioinformatics.biomedcentral.com/articles/10.1186/1471-2105-12-322
  
- ariticles that used this methods: <\br>
+ ariticles that used this methods: <br/>
  Science  01 Dec 2017 http://science.sciencemag.org/content/358/6367/eaal5081.full
  
  Nature Communications 09 December 2015 https://www.nature.com/articles/ncomms9885
