@@ -19,5 +19,5 @@
 
 ![](https://ars.els-cdn.com/content/image/1-s2.0-S0092867406003801-gr1.jpg)
 
-> Tracks show regions associated with Lys27 methylation (yellow), Lys4 methylation (green), or both modifications (red)
+> Tracks show regions associated with **Lys27 methylation (yellow)**, **Lys4 methylation (green)**, or **both modifications (red)**
 
