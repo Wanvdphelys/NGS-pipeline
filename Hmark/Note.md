@@ -1,0 +1,4 @@
+## About "Bivalent chromotin":
+**Notion** (form wiki):
+> Bivalent chromatin are segments of DNA, bound to histone proteins, that have _**both repressing and activating epigenetic regulators in the same region**_. These regulators work to enhance or silence the expression of genes. Since these regulators work in opposition to each other, they normally interact with chromatin at **different times**. However, in bivalent chromatin, both types of regulators are **interacting with the same domain at the same time**. Bivalent chromatin domains are normally associated with promoters of transcription factor genes that are expressed at low levels. Bivalent domains have also been found to play a role in developmental regulation in **pluripotent embryonic stems cells**, as well as **gene imprinting**.
+
