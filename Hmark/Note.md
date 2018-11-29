@@ -13,3 +13,9 @@ And they suggest this pattern is specific to ES cells:
 > Thus, the majority of TSSs that show bivalent domains in ES cells **do not show bivalent domains in the differentiated cells**.
 
 > Thus, bivalent domains appear **largely specific to ES cells** and, in differentiated cells, developmental genes are instead frequently organized within expansive regions showing either repressive or activating modifications.
+
+The bivalent region looks like:
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S0092867406003801-gr1.jpg)
+
+> Tracks show regions associated with Lys27 methylation (yellow), Lys4 methylation (green), or both modifications (red)
