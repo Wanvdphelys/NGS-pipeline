@@ -18,13 +18,13 @@ prep_gsea <- function(gene, cutoff){
     gsea.data <- cbind(gsea.data, top.data)
     gsea.data <- cbind(gsea.data, low.data)
     
-    write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_dataset.txt"))
+    write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_quartile_dataset.txt"))
     
     top.len <- ncol(top.data)
     low.len <- ncol(low.data)
     sum.len <- top.len+low.len
     
-    fileConn<-file(paste0(gene,"_hi_vs_lo_cluster.cls"))
+    fileConn<-file(paste0(gene,"_hi_vs_lo_quartile_cluster.cls"))
     l1 <- paste0(sum.len, ' 2 1')
     l2 <- paste0('# ',gene,'-high ',gene,'-low')
     
@@ -45,13 +45,13 @@ prep_gsea <- function(gene, cutoff){
     gsea.data <- cbind(gsea.data, top.data)
     gsea.data <- cbind(gsea.data, low.data)
     
-    write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_dataset.txt"))
+    write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_median_dataset.txt"))
     
     top.len <- ncol(top.data)
     low.len <- ncol(low.data)
     sum.len <- top.len+low.len
     
-    fileConn<-file(paste0(gene,"_hi_vs_lo_cluster.cls"))
+    fileConn<-file(paste0(gene,"_hi_vs_lo_median_cluster.cls"))
     l1 <- paste0(sum.len, ' 2 1')
     l2 <- paste0('# ',gene,'-high ',gene,'-low')
     
