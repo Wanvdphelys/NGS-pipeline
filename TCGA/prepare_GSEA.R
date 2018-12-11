@@ -1,18 +1,18 @@
-prep_gsea <- function(gene, cutoff){
+prep_gsea <- function(gene, cutoff, se, expr){
   
   require(TCGAbiolinks)
   require(SummarizedExperiment)
   
-  wh = rowData(fpkm_uq)[rowData(fpkm_uq)$external_gene_name == gene,]$ensembl_gene_id
-  gene_map <- rowData(fpkm_uq)$external_gene_name
-  names(gene_map) <- rowData(fpkm_uq)$ensembl_gene_id
+  wh = rowData(se)[rowData(se)$external_gene_name == gene,]$ensembl_gene_id
+  gene_map <- rowData(se)$external_gene_name
+  names(gene_map) <- rowData(se)$ensembl_gene_id
   
   if(cutoff == 'quantile'){
     
-    top <- quantile(dataFilt[wh,])[4]
-    low <- quantile(dataFilt[wh,])[2]
-    top.data <- dataFilt[,dataFilt[wh,]>top]
-    low.data <- dataFilt[,dataFilt[wh,]<=low]
+    top <- quantile(expr[wh,])[4]
+    low <- quantile(expr[wh,])[2]
+    top.data <- expr[,expr[wh,]>top]
+    low.data <- expr[,expr[wh,]<=low]
     
     gsea.data <- data.frame(NAME = gene_map[rownames(top.data)], DESCRIPTION = 'na')
     gsea.data <- cbind(gsea.data, top.data)
@@ -37,9 +37,9 @@ prep_gsea <- function(gene, cutoff){
     
   }else if(cutoff == 'median'){
     
-    m = median(dataFilt[wh,])
-    top.data <- dataFilt[,dataFilt[wh,]>m]
-    low.data <- dataFilt[,dataFilt[wh,]<=m]
+    m = median(expr[wh,])
+    top.data <- expr[,expr[wh,]>m]
+    low.data <- expr[,expr[wh,]<=m]
     
     gsea.data <- data.frame(NAME = gene_map[rownames(top.data)], DESCRIPTION = 'na')
     gsea.data <- cbind(gsea.data, top.data)
