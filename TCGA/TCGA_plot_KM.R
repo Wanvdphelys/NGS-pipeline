@@ -1,25 +1,25 @@
-plot_km <- function(gene, cutoff){
+plot_km <- function(gene, cutoff, se, expr){
   
   require(TCGAbiolinks)
   require(SummarizedExperiment)
   
-  wh = rowData(fpkm_uq)[rowData(fpkm_uq)$external_gene_name %in% gene,]$ensembl_gene_id
+  wh = rowData(se)[rowData(se)$external_gene_name %in% gene,]$ensembl_gene_id
   
   if(length(gene)==1){
     
     if(cutoff == 'quantile'){
-      top <- quantile(dataFilt[wh,])[3]
-      low <- quantile(dataFilt[wh,])[3]
-      top.id <- colnames(dataFilt)[dataFilt[wh,]>=top]
-      low.id <- colnames(dataFilt)[dataFilt[wh,]<=low]
+      top <- quantile(expr[wh,])[3]
+      low <- quantile(expr[wh,])[3]
+      top.id <- colnames(expr)[expr[wh,]>=top]
+      low.id <- colnames(expr)[expr[wh,]<=low]
     }else if(cutoff == 'median'){
-      m = median(dataFilt[wh,])
-      top.id <- colnames(dataFilt)[dataFilt[wh,]>=m]
+      m = median(expr[wh,])
+      top.id <- colnames(expr)[expr[wh,]>=m]
       print(length(top.id))
-      low.id <- colnames(dataFilt)[dataFilt[wh,]<=m]
+      low.id <- colnames(expr)[expr[wh,]<=m]
       print(length(low.id))
       
-      col <- colData(fpkm_uq)
+      col <- colData(se)
       col$groups <- 'NA'
       col[top.id,]$groups <- paste0(gene,'-high')
       col[low.id,]$groups <- paste0(gene,'-low')
@@ -28,13 +28,13 @@ plot_km <- function(gene, cutoff){
     
   }else if(length(gene)==2){
     
-    m1 = median(dataFilt[wh[1],])
-    m2 = median(dataFilt[wh[2],])
+    m1 = median(expr[wh[1],])
+    m2 = median(expr[wh[2],])
     
-    top.id <- colnames(dataFilt)[(dataFilt[wh[1],]>=m1)&(dataFilt[wh[2],]<=m2)]
-    low.id <- colnames(dataFilt)[(dataFilt[wh[2],]>=m2)&(dataFilt[wh[1],]<=m1)]
+    top.id <- colnames(expr)[(expr[wh[1],]>=m1)&(expr[wh[2],]<=m2)]
+    low.id <- colnames(expr)[(expr[wh[2],]>=m2)&(expr[wh[1],]<=m1)]
     
-    col <- colData(fpkm_uq)
+    col <- colData(se)
     col$groups <- 'NA'
     col[top.id,]$groups <- paste0(gene[1],'-high  ',gene[2],'-low')
     col[low.id,]$groups <- paste0(gene[1],'-low  ',gene[2],'-high')
@@ -48,5 +48,5 @@ plot_km <- function(gene, cutoff){
                        risk.table = T,conf.int = F,
                        color = c("red","black"),
                        filename = "survival_lgg_expression_subtypes.png")
-
+  
 }
