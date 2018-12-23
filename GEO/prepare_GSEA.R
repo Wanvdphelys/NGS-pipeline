@@ -18,6 +18,7 @@ prep_gsea <- function(gene, cutoff, expr){
     
     write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_quartile_dataset.txt"))
     
+    # write classification file
     top.len <- ncol(top.data)
     low.len <- ncol(low.data)
     sum.len <- top.len+low.len
@@ -45,6 +46,8 @@ prep_gsea <- function(gene, cutoff, expr){
     
     write_tsv(gsea.data, paste0(gene,"_hi_vs_lo_median_dataset.txt"))
     
+    
+    # write classification file
     top.len <- ncol(top.data)
     low.len <- ncol(low.data)
     sum.len <- top.len+low.len
